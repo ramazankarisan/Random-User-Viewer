@@ -30,3 +30,21 @@ table th {
     background-color: #04aa6d;
     color: white;
 }
+
+/* #map {
+    height: 180px;
+} */
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
+.map-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 50vh;
+    background-color: white;
+    border: 2px solid #000;
+}
