@@ -1,9 +1,11 @@
-import { selectFromResponse } from "../helpers/fecthReduxUtils";
+import { filterByCountry, selectFromResponse } from "../helpers/fecthReduxUtils";
 
 const INITIAL_STATE = {
   isLoading: true,
-  data: [],
-  error: ""
+  users: [],
+  usersCopy: [],
+  error: "",
+  searchText: ""
 }
 
 function userReducer(state = INITIAL_STATE, action) {
@@ -12,9 +14,12 @@ function userReducer(state = INITIAL_STATE, action) {
       return state;
     case "FETCH_DATA_SUCCESS":
       const selectedArr = selectFromResponse(action.payload.results, ["name", "gender", "location", "email"])
-      return { ...state, data: selectedArr, isLoading: false, error: "" };
+      return { ...state, usersCopy: selectedArr, users: selectedArr, isLoading: false, error: "" };
     case "FETCH_DATA_ERROR":
       return { ...state, error: action.payload, isLoading: false };
+    case "SEARCH_BY_COUNTRY":
+      const newUserList = filterByCountry(state.usersCopy, action.payload)
+      return { ...state, searchText: action.payload, users: newUserList }
     default:
       return state
   }

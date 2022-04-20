@@ -9,6 +9,11 @@ export const fetchData = () => async (dispatch) => {
   } catch (error) {
     dispatch({ type: 'FETCH_DATA_ERROR', payload: error.message })
   }
+}
 
-
+export const changeSearchInput = (searchText) => {
+  return {
+    type: "SEARCH_BY_COUNTRY",
+    payload: searchText
+  }
 }
