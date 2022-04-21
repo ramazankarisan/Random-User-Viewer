@@ -1,3 +1,4 @@
+// according to the target array, select the properties that we want from original array
 export function selectFromResponse(array, categoriesArr) {
 
   let newArr = array.map(item => {
@@ -14,6 +15,7 @@ export function selectFromResponse(array, categoriesArr) {
   return newArr
 }
 
+// takes a text and from original array filters it
 export function filterByCountry(arr, text) {
   const newUserList = arr.filter(user => user.location.country.toLowerCase().includes(text.toLowerCase()))
   return newUserList

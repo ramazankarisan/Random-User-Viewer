@@ -1,10 +1,11 @@
 
-import React from 'react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 const UserMap = ({ user }) => {
+
   const { location } = user
   const position = [location.coordinates.latitude, location.coordinates.longitude];
+
   return (
     <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
       <TileLayer
@@ -12,7 +13,7 @@ const UserMap = ({ user }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={position}>
-        <Popup >
+        <Popup  >
           {user.location.state}, <br /> {user.location.country}
         </Popup>
       </Marker>
