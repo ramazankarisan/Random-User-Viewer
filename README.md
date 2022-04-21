@@ -2,6 +2,8 @@
 
 # Random User Viewer
 
+[LIVE DEMO](https://random-user-viewer.netlify.app/)
+
 - In this project, when the page is loaded, it comes with 20 results as default. All results are populated in a table. On the Location column, anyone can make search by country names, and also when want to see the location on the map, can click the map button, so a modal will be opened with a map inside it. At the bottom we have a pagination container.
 
 > With pagination, it is not perfect, I could not check every possible
